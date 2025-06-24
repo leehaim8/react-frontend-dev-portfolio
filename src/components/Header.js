@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import Typical from "react-typical";
 import Switch from "react-switch";
 
-class Header extends Component {
-  titles = [];
+const HeaderTitleTypeAnimation = React.memo(({ titles }) => {
+  return <Typical className="title-styles" steps={titles} loop={50} />;
+});
 
+class Header extends Component {
   constructor() {
     super();
     this.state = { checked: false };
     this.onThemeSwitchChange = this.onThemeSwitchChange.bind(this);
+    this.titles = [];
   }
 
   onThemeSwitchChange(checked) {
@@ -27,25 +30,23 @@ class Header extends Component {
   render() {
     if (this.props.sharedData) {
       var name = this.props.sharedData.name;
-      this.titles = this.props.sharedData.titles.map(x => [ x.toUpperCase(), 1500 ] ).flat();
+      this.titles = this.props.sharedData.titles
+        .map((x) => [x.toUpperCase(), 1500])
+        .flat();
     }
 
-    const HeaderTitleTypeAnimation = React.memo( () => {
-      return <Typical className="title-styles" steps={this.titles} loop={50} />
-    }, (props, prevProp) => true);
-
     return (
-      <header id="home" style={{ height: window.innerHeight - 140, display: 'block' }}>
-        <div className="row aligner" style={{height: '100%'}}>
+      <header id="home" style={{ height: '100vh', display: 'block' }}>
+        <div className="row aligner" style={{ height: '100%' }}>
           <div className="col-md-12">
             <div>
               <span className="iconify header-icon" data-icon="la:laptop-code" data-inline="false"></span>
-              <br/>
+              <br />
               <h1 className="mb-0">
                 <Typical steps={[name]} wrapper="p" />
               </h1>
               <div className="title-container">
-                <HeaderTitleTypeAnimation />
+                <HeaderTitleTypeAnimation titles={this.titles} />
               </div>
               <Switch
                 checked={this.state.checked}
@@ -81,12 +82,44 @@ class Header extends Component {
                       fontSize: 25,
                       textAlign: "end",
                       marginLeft: "10px",
+                      marginBottom: "20px",
                       color: "#353239",
                     }}
                   ></span>
                 }
                 id="icon-switch"
               />
+              {this.props.sharedData && this.props.sharedData.resume_link && (
+                <div className="mt-4">
+                  <a
+                    style={{
+                      border: "2px solid black",
+                      color: "black",
+                      backgroundColor: "transparent",
+                      padding: "10px 20px",
+                      marginTop: "60px",
+                      fontSize: "2rem",
+                      cursor: "pointer",
+                      transition: "all 0.3s ease",
+                      borderRadius: "5px",
+                      textDecoration: "none"
+                    }}
+                    href={this.props.sharedData.resume_link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.backgroundColor = "black";
+                      e.currentTarget.style.color = "black";
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.backgroundColor = "transparent";
+                      e.currentTarget.style.color = "white";
+                    }}
+                  >
+                    <span role="img" aria-label="Resume Icon">📄</span> CV
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>

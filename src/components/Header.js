@@ -116,7 +116,7 @@ class Header extends Component {
                       e.currentTarget.style.color = "white";
                     }}
                   >
-                    <span role="img" aria-label="Resume Icon">📄</span> CV
+                    <span role="img" aria-label="Resume Icon">📄</span> Resume
                   </a>
                 </div>
               )}

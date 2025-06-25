@@ -21,7 +21,7 @@ class Contact extends React.Component {
     this.setState({ loading: true, error: null });
 
     try {
-      await axios.post("https://YOUR_API_GATEWAY_URL/contact", {
+      await axios.post("https://xyynfry0wd.execute-api.eu-north-1.amazonaws.com/Portfolio/ContactMe", {
         name: this.state.name,
         email: this.state.email,
         message: this.state.message,

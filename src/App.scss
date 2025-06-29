@@ -426,3 +426,63 @@ footer a:focus {
 	margin-top: 50px;
 	font-size: 22px;
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skills-tile {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 12px;
+  margin: 10px;
+  width: 110px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.skills-tile:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.skills-tile i {
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  padding: 15px;
+  display: inline-block;
+  transition: background-color 0.4s ease;
+}
+
+.skills-tile:hover i {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.skills-tile p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: white;
+}
+
+.skills-tile .progress-bar-wrapper {
+  height: 6px;
+  width: 60px;
+  background-color: #333;
+  margin: 6px auto 0 auto;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skills-tile .progress-bar-inner {
+  height: 100%;
+  transition: width 1s ease;
+}

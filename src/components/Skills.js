@@ -71,6 +71,7 @@
 
 
 import React from "react";
+import './App.scss';
 
 const Skills = ({ sharedSkills, resumeBasicInfo }) => {
   if (!sharedSkills || !resumeBasicInfo) return null;

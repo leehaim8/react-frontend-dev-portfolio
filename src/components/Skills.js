@@ -21,14 +21,29 @@ class Skills extends Component {
           //   </span>
           // </li>
           <li className="list-inline-item mx-3" key={i}>
-            <div
-              className="text-center skills-tile"
-              title={`Skill level: ${skills.level}%`}
-            >
+            <div className="text-center skills-tile">
               <i className={skills.class} style={{ fontSize: "220%" }}></i>
               <p className="text-center" style={{ marginTop: "4px" }}>
                 {skills.name}
               </p>
+              <div
+                style={{
+                  height: "5px",
+                  width: "60px",
+                  backgroundColor: "#ddd",
+                  margin: "5px auto",
+                  borderRadius: "5px",
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  style={{
+                    width: `${skills.level}%`,
+                    height: "100%",
+                    backgroundColor: "#00c9a7",
+                  }}
+                ></div>
+              </div>
             </div>
           </li>
         );

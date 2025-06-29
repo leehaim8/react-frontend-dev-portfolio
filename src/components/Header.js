@@ -89,37 +89,6 @@ class Header extends Component {
                 }
                 id="icon-switch"
               />
-              {this.props.sharedData && this.props.sharedData.resume_link && (
-                <div className="mt-4">
-                  <a
-                    style={{
-                      border: "2px solid black",
-                      color: "black",
-                      backgroundColor: "transparent",
-                      padding: "10px 20px",
-                      marginTop: "60px",
-                      fontSize: "2rem",
-                      cursor: "pointer",
-                      transition: "all 0.3s ease",
-                      borderRadius: "5px",
-                      textDecoration: "none"
-                    }}
-                    href={this.props.sharedData.resume_link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = "black";
-                      e.currentTarget.style.color = "black";
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.backgroundColor = "transparent";
-                      e.currentTarget.style.color = "white";
-                    }}
-                  >
-                    <span role="img" aria-label="Resume Icon">📄</span> Resume
-                  </a>
-                </div>
-              )}
             </div>
           </div>
         </div>

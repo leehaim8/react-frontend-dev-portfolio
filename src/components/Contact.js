@@ -41,8 +41,6 @@ class Contact extends React.Component {
 
   render() {
     const { name, email, message, submitted, loading, error } = this.state;
-    const emailAddress = "leehaim811@gmail.com";
-    const mailtoLink = `mailto:${emailAddress}`;
     return (
       <section id="contact" className="py-5 bg-light">
         <div className="container">
@@ -84,7 +82,7 @@ class Contact extends React.Component {
               <div className="card shadow border-0 rounded-3 p-4">
                 <h5 className="mb-3">Scan to Email Me</h5>
                 <div style={{ background: "white", padding: "16px", display: "inline-block" }}>
-                  <QRCode value={mailtoLink} size={160} />
+                  <QRCode value="https://drive.google.com/file/d/1Y7M2MiF9fPwYUAzgkTzuO0lAQ0gQSvFa/view?usp=sharing" size={160} />
                 </div>
               </div>
             </div>

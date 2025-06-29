@@ -80,7 +80,7 @@ class Contact extends React.Component {
             </div>
             <div className="col-md-4 text-center">
               <div className="card shadow border-0 rounded-3 p-4">
-                <h5 className="mb-3">Scan to Email Me</h5>
+                <h5 className="mb-3">Scan to Resume</h5>
                 <div style={{ background: "white", padding: "16px", display: "inline-block" }}>
                   <QRCode value="https://drive.google.com/file/d/1Y7M2MiF9fPwYUAzgkTzuO0lAQ0gQSvFa/view?usp=sharing" size={160} />
                 </div>

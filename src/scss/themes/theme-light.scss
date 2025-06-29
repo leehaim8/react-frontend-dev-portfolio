@@ -5,3 +5,18 @@ body[data-theme="light"] {
        background-color: #D7CAAA;
     }
 }
+
+$bg-color-start: #222;
+$bg-color-mid:   #333;
+
+#skills {
+  // Apply the animation
+  animation: bgAnimation 5s infinite;
+
+  // Nest the keyframes so it’s scoped right under the selector
+  @keyframes bgAnimation {
+    0%   { background-color: $bg-color-start; }
+    50%  { background-color: $bg-color-mid; }
+    100% { background-color: $bg-color-start; }
+  }
+}

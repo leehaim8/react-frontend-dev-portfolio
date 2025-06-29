@@ -6,17 +6,32 @@ body[data-theme="light"] {
     }
 }
 
-$bg-color-start: #222;
-$bg-color-mid:   #333;
+.skills-tile {
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+.skills-tile:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.skill-icon {
+  padding-left: 0;
+  list-style: none;
+}
 
-#skills {
-  // Apply the animation
-  animation: bgAnimation 5s infinite;
+.skills-tile {
+  animation: fadeInUp 0.6s ease forwards;
+}
 
-  // Nest the keyframes so it’s scoped right under the selector
-  @keyframes bgAnimation {
-    0%   { background-color: $bg-color-start; }
-    50%  { background-color: $bg-color-mid; }
-    100% { background-color: $bg-color-start; }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+
